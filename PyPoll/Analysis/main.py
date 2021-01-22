@@ -8,23 +8,25 @@ csvpath = os.path.join('.', 'python-challenge', 'PyPoll', 'Resources', 'election
 def percent_votes_candidate(election_data):
 
 #List of Variables 
-    Voter_ID = int(election_data[0]
-    County = str(election_data[1])
-    Candidates = str(election_data[2])
-    total_votes_cast = 0
-    list_candidates = []
-    All_Candidates = []
-    percent_votes_candidate = {}
-    mth_ct = []
-    total_nbr_votes_candidate = 0
-    election_winner_pop = ""
+Voter_ID = int(election_data[0]
+County = str(election_data[1])
+Candidates = str(election_data[2])
+Data = {}
+total_votes_cast = 0
+list_candidates = []
+All_Candidates = []
+percent_votes_candidate = {}
+mth_ct = []
+total_nbr_votes_candidate = 0
+election_winner_pop = ""
 
 # Read in the CSV File
 with open(csvpath, newline='') as csvfile:
 
 # Clarify CSV Reader
    csvreader = csv.reader(csvfile, delimiter=',')
-   csv_row=next(csvreader)
+# Clarify Row
+csv_row=next(csvreader)
 
  # Clarify Row   
     for row in csvreader:
@@ -37,8 +39,15 @@ with open(csvpath, newline='') as csvfile:
         candidates.append(candidate)
         if candidate in total_nbr_votes_candidate:
             total_nbr_votes_candidate[Candidates] = total_nbr_votes_candidate[Candidates] +1
-            else:
+        else:
             total_nbr_votes_candidate[candidate] = 1
+
+for Candidates, total_votes_cast in total_nbr_votes_candidate.items():
+    percent_votes_candidate[Candidates] = "{0:.0%}".format(total_nbr_votes_candidate/total_votes_cast)
+    if total_votes_cast > total_nbr_votes_candidate:
+        total_nbr_votes_candidate = total_votes_cast
+        winner = candidates
+
 
 # Path for Output Text File
 output_file = os.path.join('.', 'python-challenge', 'pybank', 'analysis', 'pybank.txt')
