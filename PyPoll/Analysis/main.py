@@ -40,10 +40,6 @@ with open(csvpath, newline='') as csvfile:
             else:
             total_nbr_votes_candidate[candidate] = 1
 
-
-
-
-
 # Path for Output Text File
 output_file = os.path.join('.', 'python-challenge', 'pybank', 'analysis', 'pybank.txt')
 

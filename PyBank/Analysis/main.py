@@ -22,11 +22,8 @@ with open(csvpath, newline='') as csvfile:
 #Clarify CSV Reader
    csvreader = csv.reader(csvfile, delimiter=',')
 
- #Clarify Header 
-    csv_header = next(csvreader)
-
- #Clarify Row   
-    csv_row = next(csvreader)
+#Clarify Row   
+csv_row=next(csvreader)
 
 #Set DF
 df = pd.read_csv(r'PyBank/Resources/budget_data.csv')
