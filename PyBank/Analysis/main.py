@@ -41,3 +41,7 @@ with open(output_file,'w') as txtfile:
     txtfile.write(f"Average Change: ${avg_chg:.2f}\n")
     txtfile.write(f"Greatest Increase in Profits: {greatest_incr_mth}, (${highest})\n")
     txtfile.write(f"Greatest Decrease in Profits: {greatest_decr_mth}, (${lowest})\n")
+
+    print (main.py)
+
+    
