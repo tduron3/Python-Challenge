@@ -25,9 +25,6 @@ with open(csvpath, newline='') as csvfile:
 #Clarify Row   
 csv_row=next(csvreader)
 
-#Set DF
-df = pd.read_csv(r'PyBank/Resources/budget_data.csv')
-
 #Path for Output Text File
 output_file = os.path.join('.', 'python-challenge', 'pybank', 'analysis', 'pybank.txt')
 
