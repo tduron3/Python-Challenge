@@ -2,6 +2,8 @@ import os
 import csv
 
 #List of Variables 
+Date = int(budget_data[0])
+Profits/Losses = int(budget_data[1])
 total_mths = 0
 net_amt = 0
 mth_chng = []
@@ -42,6 +44,12 @@ with open(output_file,'w') as txtfile:
     txtfile.write(f"Greatest Increase in Profits: {greatest_incr_mth}, (${highest})\n")
     txtfile.write(f"Greatest Decrease in Profits: {greatest_decr_mth}, (${lowest})\n")
 
-    print (main.py)
+print(f"Financial Analysis")
+print(f"---------------------------")
+print(f"Total Months: {tot_mths}")
+print(f"Total: ${net_amt}")
+print(f"Average Change: ${avg_chg:.2f}")
+print(f"Greatest Increase in Profits: {greatest_incr_mth}, (${highest})")
+print(f"Greatest Decrease in Profits: {greatest_decr_mth}, (${lowest})")
 
     
